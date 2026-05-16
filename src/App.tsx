@@ -386,28 +386,32 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
         {/* Feature Cards Grid */}
         <div id="features" className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 w-full text-left my-12 max-w-5xl mx-auto px-6">
            <FeatureCard 
-              icon={<Eye strokeWidth={1.5} />}
+              icon={<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_c9v8bpxj.json" background="transparent" speed="1" style={{ width: '40px', height: '40px' }} loop autoplay></lottie-player>}
+             
               iconBg="bg-blue-500"
               title={<span className="text-blue-500 dark:text-blue-400">Live Preview</span>}
               desc="Real-time A4 canvas updates instantly. What you see is exactly what gets exported."
               index={0}
            />
            <FeatureCard 
-              icon={<Type strokeWidth={1.5} />}
+              icon={<lottie-player src="https://assets10.lottiefiles.com/packages/lf20_9aa9v8tq.json" background="transparent" speed="1" style={{ width: '40px', height: '40px' }} loop autoplay></lottie-player>}
+             
               iconBg="bg-pink-500"
               title={<span className="text-pink-500 dark:text-pink-400">Custom Fonts</span>}
               desc="Granular typography controls with premium academic and modern serif/sans-serif fonts."
               index={1}
            />
            <FeatureCard 
-              icon={<ImageIcon strokeWidth={1.5} />}
+              icon={<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_glpmsv9x.json" background="transparent" speed="1" style={{ width: '40px', height: '40px' }} loop autoplay></lottie-player>}
+             
               iconBg="bg-purple-500"
               title={<span className="text-purple-500 dark:text-purple-400">Watermarks</span>}
               desc="Advanced magic background eraser and precision positioning for flawless university logos."
               index={2}
            />
            <FeatureCard 
-              icon={<Download strokeWidth={1.5} />}
+              icon={<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_uh6scv7s.json" background="transparent" speed="1" style={{ width: '40px', height: '40px' }} loop autoplay></lottie-player>}
+             
               iconBg="bg-emerald-500"
               title={<span className="text-emerald-500 dark:text-emerald-400">High-Quality Export</span>}
               desc="Download pixel-perfect, high-fidelity PDF, PNG, or JPG files format completely offline."
