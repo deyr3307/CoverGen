@@ -330,7 +330,7 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
       </header>
 
       {/* Hero Content */}
-      <main className="flex-1 flex flex-col items-center pt-24 pb-16 px-6 text-center relative z-10 w-full max-w-5xl mx-auto">
+      <main className="flex-1 flex flex-col items-center pt-24 pb-16 px-6 text-center relative z-10 w-full max-w-5xl mx-auto animated-grid-bg">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-strong bg-bg-hover text-sm mb-10 shadow-lg backdrop-blur-md transition-colors duration-300">
           <Sparkles className="text-orange-400 w-4 h-4" />
           <span className="text-orange-400/90 font-medium tracking-wide uppercase text-[11px] md:text-sm">Cover Page Generator 2.0</span>
