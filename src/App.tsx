@@ -425,7 +425,7 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={2}
            />
            <FeatureCard 
-              icon={<Download strokeWidth={1.5} className="w-8 h-8 text-indigo-400 dynamic-icon-float" />}
+              icon={<Download strokeWidth={1.5} className="w-8 h-8 text-green-400 dynamic-icon-float" />}
              
              
              
