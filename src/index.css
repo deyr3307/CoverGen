@@ -80,10 +80,7 @@
   100% { background-position: 50px 50px; }
 }
 
-@keyframes movingGrid {
-  0% { background-position: 0 0; }
-  100% { background-position: 50px 50px; }
-}
+
 
 .animated-grid-bg {
   background-size: 50px 50px;
