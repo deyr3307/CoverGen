@@ -337,11 +337,20 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
         </div>
 
         <h1 className="text-6xl md:text-8xl lg:text-[110px] leading-[1.1] mb-8 text-text-primary transition-colors duration-300 drop-shadow-sm" style={{ fontFamily: '"Kaushan Script", cursive' }}>
-          Craft <br/>
-          perfect <br/>
-          <span className="bg-gradient-to-r from-orange-400 to-pink-500 text-transparent bg-clip-text">cover</span> <br/>
-          <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">pages</span> <br/>
-          in seconds.
+            <div style={{ opacity: 0, animation: 'fadeUp 0.8s ease-out 0.1s forwards' }}>Craft</div>
+  <div style={{ opacity: 0, animation: 'fadeUp 0.8s ease-out 0.3s forwards' }}>perfect</div>
+  <div style={{ opacity: 0, animation: 'fadeUp 0.8s ease-out 0.5s forwards' }}>
+    <span className="bg-gradient-to-r from-orange-400 to-pink-500 text-transparent bg-clip-text">cover</span>
+  </div>
+  <div style={{ opacity: 0, animation: 'fadeUp 0.8s ease-out 0.7s forwards' }}>
+    <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">pages</span>
+  </div>
+  <div style={{ opacity: 0, animation: 'fadeUp 0.8s ease-out 0.9s forwards' }}>in seconds.</div>
+          
+        
+          
+          
+      
         </h1>
 
         <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-2xl font-light leading-relaxed transition-colors duration-300" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
