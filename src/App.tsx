@@ -386,7 +386,8 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
         {/* Feature Cards Grid */}
         <div id="features" className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 w-full text-left my-12 max-w-5xl mx-auto px-6">
            <FeatureCard 
-              icon={<iframe src="https://lottie.host/embed/f96b95cc-dc93-4702-86bb-b5bf838e5550/S8nI3H0HOf.json" style={{ width: '50px', height: '50px', border: 'none', background: 'transparent', pointerEvents: 'none' }}></iframe>}
+              icon={<Eye strokeWidth={1.5} className="w-8 h-8 text-blue-400 animate-bounce" />}
+             
              
              
               iconBg="bg-blue-500"
@@ -395,7 +396,8 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={0}
            />
            <FeatureCard 
-              icon={<iframe src="https://lottie.host/embed/c02cf985-23c3-4d43-9824-2c700cb9fbe5/Ysh8w1ZgYf.json" style={{ width: '50px', height: '50px', border: 'none', background: 'transparent', pointerEvents: 'none' }}></iframe>}
+              icon={<Type strokeWidth={1.5} className="w-8 h-8 text-pink-400 animate-pulse" />}
+             
              
              
               iconBg="bg-pink-500"
@@ -404,7 +406,8 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={1}
            />
            <FeatureCard 
-              icon={<iframe src="https://lottie.host/embed/14d02b54-7f8a-4467-8cfb-625d97f37ca7/JzV1PymZ1J.json" style={{ width: '50px', height: '50px', border: 'none', background: 'transparent', pointerEvents: 'none' }}></iframe>}
+              icon={<ImageIcon strokeWidth={1.5} className="w-8 h-8 text-purple-400 animate-bounce" />}
+             
              
              
               iconBg="bg-purple-500"
@@ -413,7 +416,8 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={2}
            />
            <FeatureCard 
-              icon={<iframe src="https://lottie.host/embed/5a676b6d-a913-43fa-bd03-c0068ba0225d/3vK6jW9B4W.json" style={{ width: '50px', height: '50px', border: 'none', background: 'transparent', pointerEvents: 'none' }}></iframe>}
+              icon={<Download strokeWidth={1.5} className="w-8 h-8 text-indigo-400 animate-pulse" />}
+             
              
              
               iconBg="bg-emerald-500"
