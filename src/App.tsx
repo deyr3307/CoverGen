@@ -395,7 +395,7 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
         {/* Feature Cards Grid */}
         <div id="features" className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 w-full text-left my-12 max-w-5xl mx-auto px-6">
            <FeatureCard 
-              icon={<Eye strokeWidth={1.5} className="w-8 h-8 text-blue-400 animate-bounce" />}
+              icon={<Eye strokeWidth={1.5} className="w-8 h-8 text-blue-400 dynamic-icon-float" />}
              
              
              
@@ -405,7 +405,7 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={0}
            />
            <FeatureCard 
-              icon={<Type strokeWidth={1.5} className="w-8 h-8 text-pink-400 animate-pulse" />}
+              icon={<Type strokeWidth={1.5} className="w-8 h-8 text-pink-400 dynamic-icon-float" />}
              
              
              
@@ -415,7 +415,7 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={1}
            />
            <FeatureCard 
-              icon={<ImageIcon strokeWidth={1.5} className="w-8 h-8 text-purple-400 animate-bounce" />}
+              icon={<ImageIcon strokeWidth={1.5} className="w-8 h-8 text-purple-400 dynamic-icon-float" />}
              
              
              
@@ -425,11 +425,11 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
               index={2}
            />
            <FeatureCard 
-              icon={<Download strokeWidth={1.5} className="w-8 h-8 text-indigo-400 animate-pulse" />}
+              icon={<Download strokeWidth={1.5} className="w-8 h-8 text-indigo-400 dynamic-icon-float" />}
              
              
              
-              iconBg="bg-emerald-500"
+              iconBg="bg-green-500"
               title={<span className="text-emerald-500 dark:text-emerald-400">High-Quality Export</span>}
               desc="Download pixel-perfect, high-fidelity PDF, PNG, or JPG files format completely offline."
               index={3}
