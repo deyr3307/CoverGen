@@ -430,7 +430,7 @@ function LandingPage({ onStart, theme, toggleTheme }: { onStart: () => void, the
              
              
               iconBg="bg-green-500"
-              title={<span className="text-emerald-500 dark:text-emerald-400">High-Quality Export</span>}
+              title={<span className="text-green-500 dark:text-green-400">High-Quality Export</span>}
               desc="Download pixel-perfect, high-fidelity PDF, PNG, or JPG files format completely offline."
               index={3}
            />
