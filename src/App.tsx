@@ -300,12 +300,8 @@ const ACADEMIC_COLORS = [
 ];
 
 // --- App Component ---
-export default function App() {
-    const [showSplash, setShowSplash] = useState(true);
-
-  if (showSplash) {
-    return <SplashScreen onComplete={() => setShowSplash(false)} />;
-  }
+ function MainApp() {
+    
   
   const [currentPage, setCurrentPage] = useState<PageMode>('landing');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -2496,4 +2492,13 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
       </AnimatePresence>
     </motion.div>
   );
+}
+export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  if (showSplash) {
+    return <SplashScreen onComplete={() => setShowSplash(false)} />;
+  }
+
+  return <MainApp />;
 }
