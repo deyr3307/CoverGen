@@ -247,7 +247,7 @@ const ACADEMIC_COLORS = [
 ];
 
 // --- App Component ---
- function MainApp() {
+ export default function App() {
     
   
   const [currentPage, setCurrentPage] = useState<PageMode>('landing');
