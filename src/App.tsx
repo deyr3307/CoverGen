@@ -10,6 +10,60 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { toSvg, toPng, toJpeg } from 'html-to-image';
 
+function SplashScreen({ onComplete }: { onComplete: () => void }) {
+  const letters = "CoverGen".split("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onComplete();
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.3, filter: "blur(4px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { type: "spring", stiffness: 120 },
+    },
+  };
+
+  return (
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#0a0a0a] z-50">
+      <motion.img
+        src="/icon-512.png"
+        alt="CoverGen Logo"
+        className="w-28 h-28 mb-6"
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="flex text-4xl font-extrabold text-white tracking-wider"
+      >
+        {letters.map((letter, index) => (
+          <motion.span key={index} variants={letterVariants}>
+            {letter}
+          </motion.span>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
 
 
 // --- Types ---
@@ -247,7 +301,7 @@ const ACADEMIC_COLORS = [
 ];
 
 // --- App Component ---
- export default function App() {
+ function MainApp() {
     
   
   const [currentPage, setCurrentPage] = useState<PageMode>('landing');
@@ -2438,5 +2492,15 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
         )}
       </AnimatePresence>
     </motion.div>
+  );
+}
+export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  return (
+    <>
+      <MainApp />
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+    </>
   );
 }
