@@ -2496,9 +2496,10 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
 
-  if (showSplash) {
-    return <SplashScreen onComplete={() => setShowSplash(false)} />;
-  }
-
-  return <MainApp />;
+  return (
+    <>
+      <MainApp />
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+    </>
+  );
 }
