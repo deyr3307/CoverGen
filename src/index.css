@@ -101,3 +101,15 @@
 .dynamic-icon-float {
   animation: iconFloat 3s ease-in-out infinite;
 }
+.animated-logo {
+  display: inline-block;
+  animation: floating 2.5s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-3deg); }
+  50% { transform: translateY(-12px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
