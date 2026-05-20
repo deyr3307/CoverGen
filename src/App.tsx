@@ -197,13 +197,14 @@ interface LogoConfig {
 }
 
 const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => (
-  <div onClick={onClick} className="flex items-center gap-3 cursor-pointer select-none group">
-    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-400 via-pink-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform animated-logo">
-      <GraduationCap className="text-white w-6 h-6" />
+  <div onClick={onClick} className="flex items-center gap-3 cursor-pointer group">
+    <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center hover:scale-105 transition-transform animated-logo">
+      <GraduationCap className="text-white" size={24} />
     </div>
-    <span className="text-3xl text-text-primary drop-shadow-md" style={{ fontFamily: '"Lobster", cursive' }}>Cover<span className="text-blue-500">Gen</span></span>
+    <span className="text-3xl text-text-primary font-bold">CoverGen</span>
   </div>
 );
+
 
 const applyMagicRemover = (srcUrl: string, tolerance: number): Promise<string> => {
   return new Promise((resolve) => {
