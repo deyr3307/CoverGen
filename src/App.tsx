@@ -197,30 +197,23 @@ interface LogoConfig {
 }
 
 const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
-  const letters = Array.from("CoverGen");
+  const letters = ["C", "o", "v", "e", "r", "G", "e", "n"];
   
   return (
     <div onClick={onClick} className="flex items-center gap-3 cursor-pointer group pb-2">
-      {/* Animated Floating Icon */}
       <div className="floating-icon">
-        <GraduationCap 
-          className="text-orange-400" 
-          size={48} 
-        />
+        <GraduationCap className="text-orange-400" size={48} />
       </div>
-
-      {/* Aesthetic Staggered Fade-in Luxury Cursive Text */}
-      <div className="flex luxury-cursive-text text-6xl items-baseline pr-3">
+      <div 
+        className="flex text-6xl items-baseline pr-3 font-bold"
+        style={{ fontFamily: "'Pinyon Script', cursive", letterSpacing: "0.05em" }}
+      >
         {letters.map((letter, index) => (
           <motion.span
             key={index}
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.1,
-              ease: "easeOut"
-            }}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
             className={index < 5 ? "text-black dark:text-white" : "text-orange-400"}
           >
             {letter}
@@ -231,27 +224,6 @@ const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
   );
 };
 
-
-      <div className="flex aesthetic-font text-4xl font-extrabold overflow-hidden">
-        {letters.map((letter, index) => (
-          <motion.span
-            key={index}
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.1,
-              ease: "easeOut"
-            }}
-            className={`${index < 5 ? "text-black dark:text-white" : "text-orange-400"}`}
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 
 
