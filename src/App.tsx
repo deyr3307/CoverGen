@@ -196,15 +196,36 @@ interface LogoConfig {
   offsetUnit: 'px' | '%';
 }
 
-const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => (
-  <div onClick={onClick} className="flex items-center gap-3 cursor-pointer group">
-    <GraduationCap className="text-orange-400 animated-logo" size={40} /> 
-    <div className="flex items-baseline text-3xl font-bold reverie-font-style">
-      <span className="text-black dark:text-white">Cover</span>
-      <span className="text-orange-400">Gen</span>
+const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
+  const letters = Array.from("CoverGen");
+  
+  return (
+    <div onClick={onClick} className="flex items-center gap-3 cursor-pointer group">
+      <div className="floating-icon">
+        <GraduationCap className="text-orange-400" size={42} />
+      </div>
+
+      <div className="flex aesthetic-font text-4xl font-extrabold overflow-hidden">
+        {letters.map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: "easeOut"
+            }}
+            className={`${index < 5 ? "text-black dark:text-white" : "text-orange-400"}`}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
 
 
 
