@@ -200,13 +200,18 @@ const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
   const letters = ["C", "o", "v", "e", "r", "G", "e", "n"];
   
   return (
-    <div onClick={onClick} className="flex items-center gap-3 cursor-pointer group pb-2">
+    // Re-optimized container for smaller size and layout stability
+    <div onClick={onClick} className="flex items-center gap-2 cursor-pointer group pb-1 pr-4 max-w-fit">
+      {/* Reduced size and tight gap to keep logo small */}
       <div className="floating-icon">
-        <GraduationCap className="text-orange-400" size={48} />
+        <GraduationCap className="text-orange-400" size={32} />
       </div>
+      
+      {/* Optimized text size (3xl instead of 6xl) for mobile compatibility */}
+      {/* Correct Bold Brush Script font ('Permanent Marker') applied here */}
       <div 
-        className="flex text-6xl items-baseline pr-3 font-bold"
-        style={{ fontFamily: "'Pinyon Script', cursive", letterSpacing: "0.05em" }}
+        className="flex text-3xl items-baseline font-bold"
+        style={{ fontFamily: "'Permanent Marker', cursive" }}
       >
         {letters.map((letter, index) => (
           <motion.span
@@ -223,6 +228,7 @@ const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
     </div>
   );
 };
+
 
 
 
