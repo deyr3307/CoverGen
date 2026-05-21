@@ -200,18 +200,14 @@ const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
   const letters = ["C", "o", "v", "e", "r", "G", "e", "n"];
   
   return (
-    // Re-optimized container for smaller size and layout stability
-    <div onClick={onClick} className="flex items-center gap-2 cursor-pointer group pb-1 pr-4 max-w-fit">
-      {/* Reduced size and tight gap to keep logo small */}
+    <div onClick={onClick} className="flex items-center gap-2 cursor-pointer group pb-1">
       <div className="floating-icon">
-        <GraduationCap className="text-orange-400" size={32} />
+        <GraduationCap className="text-orange-400" size={38} />
       </div>
       
-      {/* Optimized text size (3xl instead of 6xl) for mobile compatibility */}
-      {/* Correct Bold Brush Script font ('Permanent Marker') applied here */}
       <div 
-        className="flex text-3xl items-baseline font-bold"
-        style={{ fontFamily: "'Permanent Marker', cursive" }}
+        className="flex text-4xl items-baseline font-bold"
+        style={{ fontFamily: "'Brush Script MT', 'Kaushan Script', cursive", letterSpacing: "1px" }}
       >
         {letters.map((letter, index) => (
           <motion.span
@@ -219,6 +215,7 @@ const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+            /* এই লাইনের কারণেই Cover লেখাটি আগে অদৃশ্য হয়ে গেছিল, এখন ঠিক করে দেওয়া হয়েছে */
             className={index < 5 ? "text-black dark:text-white" : "text-orange-400"}
           >
             {letter}
@@ -228,6 +225,8 @@ const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => {
     </div>
   );
 };
+
+
 
 
 
