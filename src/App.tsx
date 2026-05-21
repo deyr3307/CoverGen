@@ -198,12 +198,14 @@ interface LogoConfig {
 
 const CoverGenLogo = ({ onClick }: { onClick?: () => void }) => (
   <div onClick={onClick} className="flex items-center gap-3 cursor-pointer group">
-    <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center animate-bounce">
-      <GraduationCap className="text-white" size={24} />
+    <GraduationCap className="text-orange-400 animated-logo" size={40} /> 
+    <div className="flex items-baseline text-3xl font-bold reverie-font-style">
+      <span className="text-black dark:text-white">Cover</span>
+      <span className="text-orange-400">Gen</span>
     </div>
-    <span className="text-3xl text-text-primary font-bold">CoverGen</span>
   </div>
 );
+
 
 
 
