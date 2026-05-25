@@ -283,7 +283,9 @@ const ACADEMIC_COLORS = [
   
   const [currentPage, setCurrentPage] = useState<PageMode>('landing');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  
   const [bgColor, setBgColor] = useState('#ffffff');
+   
    
   useEffect(() => {
     if (theme === 'dark') {
@@ -1423,8 +1425,8 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
             <h1 className="text-4xl font-bold mb-4 tracking-tight">{language === 'bn' ? 'টাইপোগ্রাফি এবং স্টাইলিং' : 'Typography & Styling'}</h1>
             <p className="text-text-secondary max-w-xl mx-auto text-lg leading-relaxed">{language === 'bn' ? 'কভার পৃষ্ঠার প্রতিটি উপাদানের ভিজ্যুয়াল স্টাইল ঠিকভাবে টিউন করুন।' : 'Perfectly tune the visual style of every element on your cover page.'}</p>
           </div>
-                 <div className="mb-4 mt-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <label className="block text-sm font-medium mb-2">Page Background Color:</label>
+                         <div className="max-w-5xl mx-auto mb-8 p-4 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex items-center gap-4">
+          <label className="text-sm font-bold">Page Background Color:</label>
           <input
             type="color"
             value={bgColor}
@@ -1432,6 +1434,7 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
             className="w-12 h-10 p-0 border-0 rounded cursor-pointer"
           />
         </div>
+          
 
         <div className="max-w-5xl mx-auto space-y-12">
           {(Object.keys(styles) as Array<keyof CoverStyles>).map((key) => {
