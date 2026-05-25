@@ -1423,32 +1423,33 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
             <h1 className="text-4xl font-bold mb-4 tracking-tight">{language === 'bn' ? 'টাইপোগ্রাফি এবং স্টাইলিং' : 'Typography & Styling'}</h1>
             <p className="text-text-secondary max-w-xl mx-auto text-lg leading-relaxed">{language === 'bn' ? 'কভার পৃষ্ঠার প্রতিটি উপাদানের ভিজ্যুয়াল স্টাইল ঠিকভাবে টিউন করুন।' : 'Perfectly tune the visual style of every element on your cover page.'}</p>
           </div>
-         <div className="mb-4 mt-4">
-  <label className="block text-sm font-medium mb-2">Page Background Color:</label>
-  <input
-    type="color"
-    value={bgColor}
-    onChange={(e) => setBgColor(e.target.value)}
-    className="w-12 h-10 p-0 border-0 rounded cursor-pointer"
-  />
-</div>
+                 <div className="mb-4 mt-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <label className="block text-sm font-medium mb-2">Page Background Color:</label>
+          <input
+            type="color"
+            value={bgColor}
+            onChange={(e) => setBgColor(e.target.value)}
+            className="w-12 h-10 p-0 border-0 rounded cursor-pointer"
+          />
+        </div>
+
+        <div className="max-w-5xl mx-auto space-y-12">
+          {(Object.keys(styles) as Array<keyof CoverStyles>).map((key) => {
+            const labelMap: Record<keyof CoverStyles, string> = {
+              assignmentType: 'Assignment Type',
+              topic: 'Topic Title',
+              courseCodeHeading: 'Course Code (Heading)',
+              courseCode: 'Course Code (Content)',
+              courseTitleHeading: 'Course Name (Heading)',
+              courseTitle: 'Course Name (Content)',
+              submittedToHeading: 'Submitted To (Heading)',
+              submittedTo: 'Submitted To (Content)',
+              submittedByHeading: 'Submitted By (Heading)',
+              submittedBy: 'Submitted By (Content)',
+              dateHeading: 'Date (Heading)',
+              date: 'Date (Content)'
+            };
           
-          <div className="max-w-5xl mx-auto space-y-6 px-6">
-            {(Object.keys(styles) as Array<keyof CoverStyles>).map((key) => {
-              const labelMap: Record<keyof CoverStyles, string> = {
-                assignmentType: 'Assignment Type',
-                topic: 'Topic Title',
-                courseCodeHeading: 'Course Code (Heading)',
-                courseCode: 'Course Code (Content)',
-                courseTitleHeading: 'Course Name (Heading)',
-                courseTitle: 'Course Name (Content)',
-                submittedToHeading: 'Submitted To (Heading)',
-                submittedTo: 'Submitted To (Content)',
-                submittedByHeading: 'Submitted By (Heading)',
-                submittedBy: 'Submitted By (Content)',
-                dateHeading: 'Date (Heading)',
-                date: 'Date (Content)'
-              };
               
               const title = labelMap[key] || key;
               const style = styles[key];
