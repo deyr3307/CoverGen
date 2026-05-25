@@ -283,7 +283,8 @@ const ACADEMIC_COLORS = [
   
   const [currentPage, setCurrentPage] = useState<PageMode>('landing');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-
+  const [bgColor, setBgColor] = useState('#ffffff');
+   
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -1422,7 +1423,16 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
             <h1 className="text-4xl font-bold mb-4 tracking-tight">{language === 'bn' ? 'টাইপোগ্রাফি এবং স্টাইলিং' : 'Typography & Styling'}</h1>
             <p className="text-text-secondary max-w-xl mx-auto text-lg leading-relaxed">{language === 'bn' ? 'কভার পৃষ্ঠার প্রতিটি উপাদানের ভিজ্যুয়াল স্টাইল ঠিকভাবে টিউন করুন।' : 'Perfectly tune the visual style of every element on your cover page.'}</p>
           </div>
-
+         <div className="mb-4 mt-4">
+  <label className="block text-sm font-medium mb-2">Page Background Color:</label>
+  <input
+    type="color"
+    value={bgColor}
+    onChange={(e) => setBgColor(e.target.value)}
+    className="w-12 h-10 p-0 border-0 rounded cursor-pointer"
+  />
+</div>
+          
           <div className="max-w-5xl mx-auto space-y-6 px-6">
             {(Object.keys(styles) as Array<keyof CoverStyles>).map((key) => {
               const labelMap: Record<keyof CoverStyles, string> = {
@@ -2187,11 +2197,12 @@ function EditorPage({ onLogoClick, theme, toggleTheme }: { onLogoClick: () => vo
             <div ref={containerRef} className={zoomMode === 'fit' ? `w-full max-w-[800px] aspect-[1/1.414] relative ${isCanvasTransparent ? 'bg-transparent' : 'bg-white'} shadow-2xl shadow-black/50 overflow-hidden rounded-sm transition-shadow hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]` : `relative ${isCanvasTransparent ? 'bg-transparent' : 'bg-white'} shadow-2xl shadow-black/50 overflow-hidden rounded-sm transition-shadow hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]`} style={zoomMode === 'manual' ? { width: `${794 * manualZoom}px`, height: `${1123 * manualZoom}px` } : {}}>
             <div 
               ref={!previewMode ? previewRef : null}
-              className={`absolute top-0 left-0 w-[794px] h-[1123px] origin-top-left flex flex-col items-center justify-between z-10 ${isCanvasTransparent ? 'bg-transparent' : 'bg-white'}`}
+              className={`absolute top-0 left-0 w-[794px] h-[1123px] origin-top-left flex flex-col items-center justify-between z-10 ${isCanvasTransparent ? 'bg-transparent' : ''}`}
               style={{
                 transform: `scale(${zoomMode === 'fit' ? scale : manualZoom})`,
                 width: '794px',
-                height: '1123px'
+                height: '1123px',
+                backgroundColor: bgColor
               }}
             >
               {/* Background Watermark */}
