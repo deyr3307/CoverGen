@@ -284,7 +284,7 @@ const ACADEMIC_COLORS = [
   const [currentPage, setCurrentPage] = useState<PageMode>('landing');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   
-  const [bgColor, setBgColor] = useState('#ffffff');
+  
    
    
   useEffect(() => {
